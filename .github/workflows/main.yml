@@ -19,7 +19,7 @@ jobs:
         ssh -o StrictHostKeyChecking=no -i private_key.pem $USER_NAME@$HOST_NAME << 'EOF'
           cd /home/ubuntu/python-flask/
           git pull
-          sudo systemctl stop flaskapp
+          sudo systemctl stop flask-app.service
           sudo systemctl daemon-reload
-          sudo systemctl start flaskapp
+          sudo systemctl start flask-app.service
         EOF
